@@ -8,8 +8,8 @@ Cypress Playground (https://cypress-playground.s3.eu-central-1.amazonaws.com/ind
 
 Here is a list of all the tools used and their version.
 
-- Node.js (v16.13.2)
-- npm (8.3.2)
+- Node.js (v18.16.1)
+- npm (9.5.1)
 
 ## 
 
