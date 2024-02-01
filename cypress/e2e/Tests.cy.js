@@ -29,12 +29,13 @@ describe('Cypress Playground', function() {
   it('Verificando radio input fields', function() {
     cy.visit('https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
     cy.get('#off')
-    .check()
+      .check()
     // could also be: cy.get('input[type="radio"]').check()
   })
 
-  it('Verificando .select()', function() {
-    cy.visit
+  it.only('Verificando .select()', function() {
+    cy.get('select')
+      // .select('standard')
   })
-  
+
 })
