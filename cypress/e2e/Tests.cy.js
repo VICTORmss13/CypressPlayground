@@ -1,8 +1,8 @@
 describe('Cypress Playground', function() {
   beforeEach( function() {
-    it('Acesso ao site', function() {
-      cy.visit('https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
-    })
+    // it('Acesso ao site', function() {
+    //   cy.visit('https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
+    // })
   })
 
   it('Verificando .click()', function() {
@@ -34,8 +34,12 @@ describe('Cypress Playground', function() {
   })
 
   it.only('Verificando .select()', function() {
-    cy.get('select')
-      // .select('standard')
+    cy.visit('https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
+    // cy.get('[id="selection-type"]')
+    cy.get('#selection-type')
+      .select('standard')
   })
+
+  
 
 })
