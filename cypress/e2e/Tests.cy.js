@@ -46,4 +46,10 @@ describe('Cypress Playground', function() {
       .selectFile('cypress/fixtures/example.json')
   })
 
+  it.only(`Verificando cy.intercept() .as('alias') cy.wait('alias')`, function() {
+    cy.intercept('GET', 'https://jsonplaceholder.typicode.com/todos/1').as('getTODO')
+    cy.contains('button', 'Get TODO').click() // this would trigger the request above.
+    // cy.get('#intercept > button')
+    cy.wait('@getTODO')
+  })
 })
