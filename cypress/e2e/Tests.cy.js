@@ -41,7 +41,7 @@ describe('Cypress Playground', function() {
     cy.get('select[multiple]').select(['apple', 'cherry'])
   })
 
-  it.only('Verificando .selectFile()', function() {
+  it('Verificando .selectFile()', function() {
     cy.get('#file-upload')
       .selectFile('cypress/fixtures/example.json')
   })
