@@ -38,6 +38,8 @@ describe('Cypress Playground', function() {
     // cy.get('[id="selection-type"]')
     cy.get('#selection-type')
       .select('standard')
+    
+    cy.get('select[multiple]').select(['apple', 'cherry'])
   })
 
   
