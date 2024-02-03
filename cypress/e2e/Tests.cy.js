@@ -1,7 +1,7 @@
 describe('Cypress Playground', function() {
   beforeEach( function() {
     // it('Acesso ao site', function() {
-    //   cy.visit('https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
+      cy.visit('https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
     // })
   })
 
@@ -33,15 +33,17 @@ describe('Cypress Playground', function() {
     // could also be: cy.get('input[type="radio"]').check()
   })
 
-  it.only('Verificando .select()', function() {
+  it('Verificando .select()', function() {
     cy.visit('https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
     // cy.get('[id="selection-type"]')
     cy.get('#selection-type')
       .select('standard')
-    
     cy.get('select[multiple]').select(['apple', 'cherry'])
   })
 
-  
+  it.only('Verificando .selectFile()', function() {
+    cy.get('#file-upload')
+      .selectFile('cypress/fixtures/example.json')
+  })
 
 })
