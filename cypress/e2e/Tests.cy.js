@@ -75,11 +75,20 @@ describe('Cypress Playground', function() {
     cy.get('ul li').should('have.length', 5)
   })
 
-  it.only('Verificando cy.clock()', function () {
+  it('Verificando cy.clock()', function () {
     const now = new Date(2024, 6, 20) //month is 0-indexed
     cy.clock(now)
     cy.visit('https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
     cy.contains('p', '2024-07-20').should('be.visible')
-    
+  })
+
+  it('Verificando .then()', function () {
+    cy.get('#timestamp')
+      .then(element => {
+        const value = element[0].innerText
+        cy.get('input[type="number"]').type(value)
+      })
+    cy.get('form > button').click()
+    // TODO: check if the Congrats message appears.
   })
 })
