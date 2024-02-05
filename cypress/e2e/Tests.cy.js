@@ -67,8 +67,19 @@ describe('Cypress Playground', function() {
     cy.get('input[type="date"]').type('2024-02-05').blur()
   })
 
-  it.only(`Cypress.env('secret')`, function () {
+  it(`Verificando Cypress.env('secret')`, function () {
     cy.get('input[type="password"]').type(Cypress.env('password'), { log: false })
+  })
 
+  it(`Verificando .should('have.length',n)`, function () {
+    cy.get('ul li').should('have.length', 5)
+  })
+
+  it.only('Verificando cy.clock()', function () {
+    const now = new Date(2024, 6, 20) //month is 0-indexed
+    cy.clock(now)
+    cy.visit('https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
+    cy.contains('p', '2024-07-20').should('be.visible')
+    // cy.get('#date-section-paragraph > strong').should('be.equal', '2024-06-20')
   })
 })
