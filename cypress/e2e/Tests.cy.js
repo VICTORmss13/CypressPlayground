@@ -46,10 +46,20 @@ describe('Cypress Playground', function() {
       .selectFile('cypress/fixtures/example.json')
   })
 
-  it.only(`Verificando cy.intercept() .as('alias') cy.wait('alias')`, function() {
+  it(`Verificando cy.intercept() .as('alias') cy.wait('alias')`, function() {
     cy.intercept('GET', 'https://jsonplaceholder.typicode.com/todos/1').as('getTODO')
     cy.contains('button', 'Get TODO').click() // this would trigger the request above.
     // cy.get('#intercept > button')
     cy.wait('@getTODO')
+  })
+
+  it.only('Verificando cy.request()', function() {
+    cy.request('GET', 'https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
+      .its('status')
+      .should('be.equal', 200)
+  })
+
+  it('invoke().trigger()', function () {
+    
   })
 })
