@@ -63,9 +63,12 @@ describe('Cypress Playground', function() {
     cy.get('input[type="range"]').invoke('val', 7).trigger('change')
   })
 
-  it.only(`Verificando type('yyyy-mm-dd').blur()`, function () {
+  it(`Verificando type('yyyy-mm-dd').blur()`, function () {
     cy.get('input[type="date"]').type('2024-02-05').blur()
   })
 
-  it
+  it.only(`Cypress.env('secret')`, function () {
+    cy.get('input[type="password"]').type(Cypress.env('password'), { log: false })
+
+  })
 })
