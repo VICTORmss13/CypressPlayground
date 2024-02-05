@@ -80,6 +80,6 @@ describe('Cypress Playground', function() {
     cy.clock(now)
     cy.visit('https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
     cy.contains('p', '2024-07-20').should('be.visible')
-    // cy.get('#date-section-paragraph > strong').should('be.equal', '2024-06-20')
+    
   })
 })
