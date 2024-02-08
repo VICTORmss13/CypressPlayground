@@ -5,14 +5,15 @@ describe('Cypress Playground', function() {
     // })
   })
 
-  it.only('Verificando .click()', function() {
+  it('Verificando .click()', function() {
     cy.get('button[type="submit"]').click()
     cy.contains('#success',`You've been successfully subscribed to our newsletter`)
   })
 
-  it('Verificando .type()', function() {
+  it.only('Verificando .type()', function() {
     cy.get('textarea[placeholder="Joe Doe"]')
       .type('Testando o campo "Sign here"')
+    cy.contains('#signature', `Testando o campo "Sign here"`)
   })
 
   it('Verificando .check() and .uncheck()', function() {
