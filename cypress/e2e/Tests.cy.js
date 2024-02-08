@@ -10,18 +10,18 @@ describe('Cypress Playground', function() {
     cy.contains('#success',`You've been successfully subscribed to our newsletter`)
   })
 
-  it.only('Verificando .type()', function() {
+  it('Verificando .type()', function() {
     cy.get('textarea[placeholder="Joe Doe"]')
       .type('Testando o campo "Sign here"')
     cy.contains('#signature', `Testando o campo "Sign here"`)
   })
 
-  it('Verificando .check() and .uncheck()', function() {
+  it.only('Verificando .check() and .uncheck()', function() {
+    cy.get('#signature-checkbox').check()
     cy.get('textarea[placeholder="Jane Doe"]')
-      .type('Tentando o campo Sign Here Jane Doe')
-    cy.get('input[type="checkbox"]')
-      .check()
-      .uncheck()
+      .type('Tentando o campo "Sign Here"2')
+    cy.contains('#check em', 'Tentando o campo "Sign Here"2').should('be.visible')
+    cy.get('#signature-checkbox').uncheck()
   })
 
   it('Verificando radio input fields', function() {
