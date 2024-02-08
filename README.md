@@ -1,6 +1,6 @@
-# Cypress Trainning Project 
+# Cypress Training Project 
 
-The Goal of this project is to test everything that is possible on the aplication "Cypress Playground".
+This project aims to test the application "Cypress Playground".
 
 Cypress Playground (https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html) is an application developed for Walmyr.(https://github.com/wlsf82)
 
