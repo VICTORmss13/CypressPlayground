@@ -19,8 +19,8 @@ describe('Cypress Playground', function() {
   it.only('Verificando .check() and .uncheck()', function() {
     cy.get('#signature-checkbox').check()
     cy.get('textarea[placeholder="Jane Doe"]')
-      .type('Tentando o campo "Sign Here"2')
-    cy.contains('#check em', 'Tentando o campo "Sign Here"2').should('be.visible')
+      .type('Testando o campo "Sign Here"2')
+    cy.contains('#check em', 'Testando o campo "Sign Here"2').should('be.visible')
     cy.get('#signature-checkbox').uncheck()
   })
 
